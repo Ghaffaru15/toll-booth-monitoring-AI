@@ -1,5 +1,6 @@
 from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense
 from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import Adam
 
 model = Sequential()
 
@@ -39,4 +40,10 @@ model.add(
     Dense(4, activation='softmax')
 )
 
-print(model.summary())
+# print(model.summary())
+
+model.compile(
+    optimizer=Adam(),
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
