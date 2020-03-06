@@ -1,47 +1,65 @@
-from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 
 model = Sequential()
 
-model.add(
-    Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3))
-)
-
-model.add(
-    MaxPool2D(2, 2)
-)
-
-model.add(
-    Conv2D(64, (3, 3), activation='relu')
-)
-
-model.add(
-    MaxPool2D(2, 2)
-)
-
-model.add(
-    Conv2D(128, (3, 3), activation='relu')
-)
-
-model.add(
-    MaxPool2D(2, 2)
-)
-
-model.add(
-    Flatten()
-)
-
-model.add(
-    Dense(512, activation='relu')
-)
-
-model.add(
-    Dense(4, activation='softmax')
-)
+# model.add(
+#     Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3))
+# )
+#
+# model.add(
+#     MaxPool2D(2, 2)
+# )
+#
+# model.add(
+#     Conv2D(64, (3, 3), activation='relu')
+# )
+#
+# model.add(
+#     MaxPool2D(2, 2)
+# )
+#
+# model.add(
+#     Conv2D(128, (3, 3), activation='relu')
+# )
+#
+# model.add(
+#     MaxPool2D(2, 2)
+# )
+#
+# model.add(
+#     Flatten()
+# )
+#
+# model.add(
+#     Dense(512, activation='relu')
+# )
+#
+# model.add(
+#     Dense(4, activation='softmax')
+# )
 
 # print(model.summary())
 
+model.add(
+    Dense(
+        256,
+        activation='relu',
+        input_dim=4 * 4 * 512
+    )
+)
+
+model.add(
+    Dropout(0.5)
+)
+
+model.add(
+    Dense(
+        4,
+        activation='softmax'
+    )
+)
 model.compile(
     optimizer=Adam(),
     loss='sparse_categorical_crossentropy',
