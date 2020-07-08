@@ -6,10 +6,11 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 from tensorflow.keras import models
 
-# model = load_model('models/model.h5')
+model = load_model('models/model.h5')
+
 history = model.fit_generator(
     train_generator,
-    epochs=5,
+    epochs=100,
     validation_data=validation_generator
 )
 

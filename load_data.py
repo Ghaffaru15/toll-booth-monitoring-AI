@@ -12,6 +12,7 @@ TRAIN_E_DIR = os.path.join(TRAIN_DIR, 'E')
 TRAIN_L_DIR = os.path.join(TRAIN_DIR, 'L')
 TRAIN_M_DIR = os.path.join(TRAIN_DIR, 'M')
 TRAIN_S_DIR = os.path.join(TRAIN_DIR, 'S')
+TRAIN_P_DIR = os.path.join(TRAIN_DIR, 'P')
 
 VALIDATION_E_DIR = os.path.join(VALIDATION_DIR, 'E')
 
@@ -21,10 +22,14 @@ VALIDATION_M_DIR = os.path.join(VALIDATION_DIR, 'M')
 
 VALIDATION_S_DIR = os.path.join(VALIDATION_DIR, 'S')
 
+VALIDATION_P_DIR = os.path.join(VALIDATION_DIR, 'P')
+
 TEST_E_DIR = os.path.join(TEST_DIR, 'E')
 TEST_L_DIR = os.path.join(TEST_DIR, 'L')
 TEST_M_DIR = os.path.join(TEST_DIR, 'M')
 TEST_S_DIR = os.path.join(TEST_DIR, 'S')
+TEST_P_DIR = os.path.join(TEST_DIR, 'P')
+
 
 # print(len(os.listdir(os.path.join(BASE_DIR, 'cars_train/E'))))
 
