@@ -10,7 +10,7 @@ model = load_model('models/model.h5')
 
 history = model.fit_generator(
     train_generator,
-    epochs=100,
+    epochs=1,
     validation_data=validation_generator
 )
 

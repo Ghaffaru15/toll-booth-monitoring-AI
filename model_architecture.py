@@ -36,7 +36,7 @@ model.add(
     )
 )
 model.compile(
-    optimizer=Adam(),
-    loss='sparse_categorical_crossentropy',
+    optimizer='rmsprop',
+    loss='categorical_crossentropy',
     metrics=['accuracy']
 )
