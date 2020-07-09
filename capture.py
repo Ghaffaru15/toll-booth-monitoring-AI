@@ -55,9 +55,7 @@ while True:
     # resize to 224 224
     roi = cv2.resize(roi, (150, 150))
     cv2.imwrite('image_capture/images/car.jpg', roi)
-    # test_image = image.load_img('car.jpg', target_size=(150, 150))
-    # test_image = image.img_to_array(test_image)
-    # test_image = np.expand_dims(test_image, axis=0)
+
     prediction = model.predict(test_images_generator)
 
     if np.argmax(prediction[0]) == 0 and prediction[0][0] > 0.8:
